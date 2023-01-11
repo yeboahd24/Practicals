@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Time Zone Converter</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+    />
+  </head>
+  <body class="bg-gray-100 h-screen">
+    <div class="flex justify-center items-center h-full">
+      <form class="bg-white p-6 rounded-lg shadow-md w-full sm:w-3/4 lg:w-1/2">
+        <h1 class="text-2xl font-medium mb-4">Time Zone Converter</h1>
+        <div class="mb-4">
+          <label class="block text-gray-700 font-medium mb-2" for="time"
+            >Enter time:</label
+          >
+          <input
+            class="border border-gray-400 p-2 rounded-lg w-full"
+            type="time"
+            id="time"
+            name="time"
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 font-medium mb-2" for="from"
+            >Convert from:</label
+          >
+          <select
+          class="border border-gray-400 p-2 rounded-lg w-full"
+          id="from"
+          name="from"
+          required
+          oninvalid="this.setCustomValidity('Please select a time zone')"
+          oninput="setCustomValidity('')"
+        >
+            <option value="" disabled selected>Select a time zone</option>
+
+            <option value="UTC-12">UTC-12</option>
+            <option value="UTC-11">UTC-11</option>
+            <option value="UTC-10">UTC-10</option>
+            <option value="UTC-09">UTC-09</option>
+            <option value="UTC-08">UTC-08</option>
+            <option value="UTC-07">UTC-07</option>
+            <option value="UTC-06">UTC-06</option>
+            <option value="UTC-05">UTC-05</option>
+            <option value="UTC-04">UTC-04</option>
+            <option value="UTC-03">UTC-03</option>
+            <option value="UTC-02">UTC-02</option>
+            <option value="UTC-01">UTC-01</option>
+
+            <!-- Add more options for other time zones -->
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 font-medium mb-2" for="to"
+            >Convert to:</label
+          >
+          <select
+          class="border border-gray-400 p-2 rounded-lg w-full"
+          id="to"
+          name="to"
+          required
+          oninvalid="this.setCustomValidity('Please select a time zone')"
+          oninput="setCustomValidity('')"
+        >
+            <option value="" disabled selected>Select a time zone</option>
+
+            <option value="UTC+00">UTC+00</option>
+            <option value="UTC+1">UTC+1</option>
+            <option value="UTC+2">UTC+2</option>
+            <option value="UTC+3">UTC+3</option>
+            <option value="UTC+4">UTC+4</option>
+            <option value="UTC+5">UTC+5</option>
+            <option value="UTC+6">UTC+6</option>
+            <option value="UTC+7">UTC+7</option>
+            <option value="UTC+8">UTC+8</option>
+            <option value="UTC+9">UTC+9</option>
+            <option value="UTC+10">UTC+10</option>
+            <option value="UTC+11">UTC+11</option>
+            <option value="UTC+12">UTC+12</option>
+            <option value="UTC+13">UTC+13</option>
+            <option value="UTC+14">UTC+14</option>
+
+            <!-- Add more options for other time zones -->
+          </select>
+        </div>
+        <div class="flex justify-center">
+          <input
+            class="bg-indigo-500 text-white p-2 rounded-lg"
+            type="submit"
+            value="Convert"
+          />
+        </div>
+        <div
+          id="result"
+          class="text-center text-2xl font-medium text-gray-700 mt-4"
+        ></div>
+      </form>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
